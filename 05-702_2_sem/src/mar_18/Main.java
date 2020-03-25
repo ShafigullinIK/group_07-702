@@ -13,8 +13,10 @@ public class Main {
     public static void main(String[] args) {
         createAlbums();
         albums.stream()
+                .filter(x -> x.getYear() == 2020)
                 .map(album -> album.getTracks())
                 .flatMap(arrayListTracks-> arrayListTracks.stream())
+                .filter(track -> track.getSinger().getCountry() != Country.SPAIN)
                 .forEach(System.out::println);
 
 
