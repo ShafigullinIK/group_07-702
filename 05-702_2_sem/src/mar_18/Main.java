@@ -33,12 +33,41 @@ public class Main {
                         "Энрике Иглесиас",
                         1,
                         Country.SPAIN);
+        iglesias.addGenre(Genre.POP);
+        iglesias.addGenre(Genre.ROCK);
         Track bailando = new Track(
                 "Байландо",
                 iglesias,
                 190,
                 Genre.POP
         );
+        Track elRey = new Track(
+                "El Rey",
+                iglesias,
+                130,
+                Genre.ROCK
+        );
+
+        Singer eminem = new Singer(
+                Type.SOLO,
+                "Эминем",
+                1,
+                Country.USA
+        );
+        eminem.addGenre(Genre.RAP);
+        Track rapGod = new Track(
+                "Реп Год",
+                eminem,
+                210,
+                Genre.RAP
+        );
+        Track stan = new Track(
+                "Стэн",
+                eminem,
+                360,
+                Genre.RAP
+        );
+
 
         Album a2020 = new Album(
                 "Странный",
@@ -48,7 +77,15 @@ public class Main {
         a2020.addTrack(uno);
         a2020.addTrack(bailando);
         a2020.addTrack(skibidi);
+        a2020.addTrack(rapGod);
+
+        Album a2019 = new Album(
+                "Очень странный",
+                2019);
+        a2019.addTrack(stan);
+        a2019.addTrack(skibidi);
 
         System.out.println(a2020);
+        System.out.println(a2019);
     }
 }
