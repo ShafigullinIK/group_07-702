@@ -4,8 +4,23 @@ import mar_18.Artist.Country;
 import mar_18.Artist.Singer;
 import mar_18.Artist.Type;
 
+import java.util.ArrayList;
+
 public class Main {
+
+    static ArrayList<Album> albums = new ArrayList<>();
+
     public static void main(String[] args) {
+        createAlbums();
+        albums.stream()
+                .map(album -> album.getTracks())
+                .flatMap(arrayListTracks-> arrayListTracks.stream())
+                .forEach(System.out::println);
+
+
+    }
+
+    public static void createAlbums(){
         Singer littleBig =
                 new Singer(Type.BAND,
                         "Little Big",
@@ -20,7 +35,7 @@ public class Main {
                         littleBig,
                         160,
                         Genre.POP
-                        );
+                );
         Track skibidi = new Track(
                 "Skibidi",
                 littleBig,
@@ -72,7 +87,7 @@ public class Main {
         Album a2020 = new Album(
                 "Странный",
                 2020
-                );
+        );
 
         a2020.addTrack(uno);
         a2020.addTrack(bailando);
@@ -85,7 +100,7 @@ public class Main {
         a2019.addTrack(stan);
         a2019.addTrack(skibidi);
 
-        System.out.println(a2020);
-        System.out.println(a2019);
+        albums.add(a2019);
+        albums.add(a2020);
     }
 }
