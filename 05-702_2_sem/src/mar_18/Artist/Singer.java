@@ -2,7 +2,6 @@ package mar_18.Artist;
 
 import mar_18.Genre;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Singer {
